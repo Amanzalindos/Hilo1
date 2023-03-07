@@ -3,11 +3,11 @@ import java.io.File;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-   public class HiloCancion extends Thread {
-        String nombre;
+   public class Pista extends Thread {
+        String Name;
 
-        public HiloCancion(String nombre) {
-            this.nombre = nombre;
+        public Pista(String Name) {
+            this.Name = Name;
         }
 
         public void run() {
@@ -18,7 +18,7 @@ import javax.sound.sampled.Clip;
                 clip.start();
                 Thread.sleep(clip.getMicrosecondLength() / 1000);
             } catch (Exception e) {
-                System.out.println("Error al reproducir el archivo de sonido: " + e.getMessage());
+                System.out.println("Error: " + e.getMessage());
             }
         }
     }
